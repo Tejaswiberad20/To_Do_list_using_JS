@@ -4,62 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
-    <style>
-        body{
-            background-color: 	 #e6f2ff;
-        }
-        h1{
-    text-align: center;
-}
-.action-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-.list-container{
-    width: 550px;
-    height: 350px;
-    display: block;
-    margin: 20px auto;
-    background-color: #D9AFD9;
-    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
-    padding: 10px;
-    box-shadow:  0 0 10px 3px gainsboro;
-    border-radius: 5px;
-    overflow-y: scroll;
-}
-@media screen and (min-width:600px) and (max-width:900px){
-    .list-container{
-        width: 50%;
-    }
-}
-.todoItem{
-    font-size: 18px;
-    background-color: white;
-    padding:10px 8px ;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 20px;
-}
-.input-todo{
-    border-radius: 8px;
-    margin-right: 15px;
-    height: 20px;
-    width: 300px;
-    border: 2px solid black;
-    padding: 5px;
-}
-.btn{
-    font-size: medium;
-    cursor: pointer;
-    font-size: 18px;
-    color: #000;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    background-color: #D9AFD9;
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <h1>To Do List </h1>
@@ -71,26 +17,8 @@
         <button onclick="add()" class="btn">Add</button>
        
     </div>
+    <script src="script.js"></script>
 
-    <script >const todoList = [];
-
-        function add(){
-            const inputElement = document.getElementById('input-todo');
-            todoList.push(inputElement.value);
-            inputElement.value = "";
-        
-            renderToDoList();
-        }
-        
-        function renderToDoList(){
-            const listContainer = document.getElementById('list-container');
-            listContainer.innerHTML = "";
-            for(const todoItem of todoList)
-            {
-                listContainer.innerHTML += `<div class="todoItem">
-                    <input type="checkbox">
-                    ${todoItem}</div>` ;
-            }
-        }</script>
 </body>
 </html>
+
